@@ -190,7 +190,12 @@ int main(int argc, char *argv[]) { }" HAVE_NULLABLE)
 
 test_big_endian(WORDS_BIGENDIAN)
 
-find_package(ZLIB 1.1.2 REQUIRED)
+# find_package(ZLIB 1.1.2 REQUIRED)
+FetchContent_Declare(ZLIB
+  GIT_REPOSITORY https://github.com/DeepForge-Tech/zlib.git
+  GIT_TAG master
+)
+FetchContent_MakeAvailable(ZLIB)
 # so developers on systems where zlib is named differently (Windows, sometimes)
 # can override the name used in the pkg-config file
 if (NOT ZLIB_LINK_LIBRARY_NAME)
