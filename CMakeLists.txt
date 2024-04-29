@@ -8,7 +8,7 @@ endif()
 project(libzip
   VERSION 1.10.1
   LANGUAGES C)
-
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 option(ENABLE_COMMONCRYPTO "Enable use of CommonCrypto" ON)
 option(ENABLE_GNUTLS "Enable use of GnuTLS" ON)
 option(ENABLE_MBEDTLS "Enable use of mbed TLS" ON)
